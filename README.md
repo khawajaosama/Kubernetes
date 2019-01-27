@@ -149,7 +149,6 @@ external port. How to do that is described in the next section’s tip.
 ### ACCESSING YOUR SERVICE THROUGH ITS EXTERNAL IP:
 You can now send requests to your pod through the service’s external IP and port:
 ```
-$ curl 104.155.74.57:8080
-You’ve hit kubia-4jfyf
+$ minikube service kubia-http
 ```
 ![](pictures/services.png)
