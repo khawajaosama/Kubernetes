@@ -8,12 +8,12 @@
 
 ## REQUIREMENTS:
 
-```
+
 - You should have good knowledge of docker to get hands on [kubernetes](https://kubernetes.io/):
 - It is good to have [Linux](https://www.linux.org/) OS.
 - Have [Docker](http://docs.docker.com/engine/installation/) Installed.
 - Have an account on [Docker Hub](https://hub.docker.com)
-```
+
     
 ### NOTE:
 
