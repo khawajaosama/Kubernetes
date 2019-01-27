@@ -15,7 +15,7 @@
 - Have an account on [Docker Hub](https://hub.docker.com)
 
     
-## Creating, Running, and Sharing a Container Image:
+## - Creating, Running, and Sharing a Container Image:
 
 ```
 - Creating a trivial Node.js app
