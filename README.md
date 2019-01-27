@@ -95,3 +95,30 @@ $ kubectl describe node minikube
 ```
 
 ![](pictures/kubernetes_2.png)
+
+## Running your first app on Kubernetes:
+
+### Deploying your Node.js app:
+```
+$ kubectl run kubia --image=luksa/kubia --port=8080 --generator=run/v1
+replicationcontroller "kubia" created
+```
+## INTRODUCING PODS:
+A pod is a group of one or more tightly related containers that will always run
+together on the same worker node and in the same Linux namespace(s). Each pod
+is like a separate logical machine with its own IP, hostname, processes, and so on,
+running a single application.
+
+### Listing Pods:
+```
+$ kubectl get pods
+
+NAME         READY  STATUS   RESTARTS   AGE
+kubia-4jfyf   0/1   Pending     0       1m
+
+(Take some minutes)
+
+NAME         READY  STATUS   RESTARTS   AGE
+kubia-4jfyf   1/1   Running     0       1m
+```
+![](pictures/kubernetes_3.png)
