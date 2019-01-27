@@ -27,3 +27,4 @@
 ```
 $ docker build -t kubia .
 ```
+![](pictures/docker_1.png)
