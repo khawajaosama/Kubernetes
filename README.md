@@ -122,3 +122,34 @@ NAME         READY  STATUS   RESTARTS   AGE
 kubia-4jfyf   1/1   Running     0       1m
 ```
 ![](pictures/kubernetes_3.png)
+
+## Accessing Your Web Application:
+To make the pod accessible from the outside, you’ll expose it through a
+Service object. You’ll create a special service of type LoadBalancer , because if you cre-
+ate a regular service (a ClusterIP service), like the pod, it would also only be accessi-
+ble from inside the cluster.
+
+### CREATING A SERVICE OBJECT:
+```
+$ kubectl expose rc kubia --type=LoadBalancer --name kubia-http
+service "kubia-http" exposed
+```
+### LISTING SERVICES:
+```
+NAME        CLUSTER-IP    EXTERNAL-IP    PORT(S)         AGE
+kubernetes  10.3.240.1    <none>         443/TCP         35m
+kubia-http  10.3.246.185  104.155.74.57  8080:31348/TCP  1m
+(Take some time)
+```
+### NOTE:
+Minikube doesn’t support LoadBalancer services, so the service will
+never get an external IP. But you can access the service anyway through its
+external port. How to do that is described in the next section’s tip.
+
+### ACCESSING YOUR SERVICE THROUGH ITS EXTERNAL IP:
+You can now send requests to your pod through the service’s external IP and port:
+```
+$ curl 104.155.74.57:8080
+You’ve hit kubia-4jfyf
+```
+![](pictures/services.png)
