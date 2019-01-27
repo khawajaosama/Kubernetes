@@ -74,8 +74,24 @@ $ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s h
 ### Displaying Cluster Information:
 ```
 $ kubectl cluster-info
-Kubernetes master is running at https://192.168.99.100:8443
-KubeDNS is running at https://192.168.99.100:8443/api/v1/proxy/...
-kubernetes-dashboard is running at https://192.168.99.100:8443/api/v1/...
-```
+
+Kubernetes master is running at https://192.168.99.108:8443
+KubeDNS is running at https://192.168.99.108:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
 ![](pictures/kubernetes_1.png)
+
+### CHECKING IF THE CLUSTER IS UP BY LISTING CLUSTER NODES:
+
+```
+$ kubectl get nodes
+
+NAME       STATUS   ROLES    AGE   VERSION
+minikube   Ready    master   89m   v1.12.4
+```
+
+### RETRIEVING ADDITIONAL DETAILS OF AN OBJECT:
+```
+$ kubectl describe node minikube
+```
+
+![](pictures/kubernetes_2.png)
