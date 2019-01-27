@@ -83,6 +83,7 @@ KubeDNS is running at https://192.168.99.108:8443/api/v1/namespaces/kube-system/
 ### CHECKING IF THE CLUSTER IS UP BY LISTING CLUSTER NODES:
 
 ```
+```
 $ kubectl get nodes
 
 NAME       STATUS   ROLES    AGE   VERSION
