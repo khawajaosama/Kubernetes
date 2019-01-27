@@ -2,20 +2,17 @@
 
 ![](pictures/kubernetes_logo.png)
 
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design`
-- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `Built by experienced developers, it takes care of much of the hassle of Web development.`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `So you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.`
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Kubernetes is an open source container orchestration engine for automating deployment, scaling, and management of containerized applications.`
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `It groups containers that make up an application into logical units for easy management and discovery.`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kubernetes is a container orchestration system for Docker containers that is more extensive than Docker Swarm and is meant to coordinate clusters of nodes at scale in production in an efficient manner.`
 
 ## REQUIREMENTS:
 
-These are the important libraries that you will need in order to process this project:
-
 ```
-- Django
-- Scipy
-- SQlite3
-- Numpy
-- Matplotlib
+- You should have good knowledge of docker to get hands on [kubernetes](https://kubernetes.io/):
+- It is good to have [Linux](https://www.linux.org/) OS.
+- Have [Docker](http://docs.docker.com/engine/installation/) Installed.
+- Have an account on [Docker Hub](https://hub.docker.com)
 ```
     
 ### NOTE:
