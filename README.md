@@ -152,3 +152,17 @@ You can now send requests to your pod through the service’s external IP and po
 $ minikube service kubia-http
 ```
 ![](pictures/services.png)
+
+### Horizontally Scaling the Application:
+```
+$ kubectl get replicationcontrollers
+
+NAME DESIRED CURRENT AGE
+kubia   1       1   17m
+```
+### INCREASING THE DESIRED REPLICA COUNT:
+```
+$ kubectl scale rc kubia --replicas=3
+replicationcontroller "kubia" scaled
+```
+![](pictures/scale.png)
