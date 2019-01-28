@@ -125,9 +125,9 @@ kubia-4jfyf   1/1   Running     0       1m
 
 ## Accessing Your Web Application:
 To make the pod accessible from the outside, you’ll expose it through a
-Service object. You’ll create a special service of type LoadBalancer , because if you cre-
-ate a regular service (a ClusterIP service), like the pod, it would also only be accessi-
-ble from inside the cluster.
+Service object. You’ll create a special service of type LoadBalancer , because 
+if you create a regular service (a ClusterIP service), like the pod, it would also only be 
+accessible from inside the cluster.
 
 ### CREATING A SERVICE OBJECT:
 ```
