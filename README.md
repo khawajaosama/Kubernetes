@@ -103,7 +103,7 @@ $ kubectl describe node minikube
 $ kubectl run kubia --image=luksa/kubia --port=8080 --generator=run/v1
 replicationcontroller "kubia" created
 ```
-## INTRODUCING PODS:
+### INTRODUCING PODS:
 A pod is a group of one or more tightly related containers that will always run
 together on the same worker node and in the same Linux namespace(s). Each pod
 is like a separate logical machine with its own IP, hostname, processes, and so on,
