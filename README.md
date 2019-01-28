@@ -166,3 +166,9 @@ $ kubectl scale rc kubia --replicas=3
 replicationcontroller "kubia" scaled
 ```
 ![](pictures/scale.png)
+
+### SEEING REQUESTS HIT ALL THREE PODS WHEN HITTING THE SERVICE:
+Because you now have multiple instances of your app running, let’s see what happens
+if you hit the service URL again. Will you always hit the same app instance or not?
+![](pictures/curls.png)
+![](pictures/diagram1.png)
