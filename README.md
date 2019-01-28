@@ -172,3 +172,18 @@ Because you now have multiple instances of your app running, let’s see what ha
 if you hit the service URL again. Will you always hit the same app instance or not?
 ![](pictures/curls.png)
 ![](pictures/diagram1.png)
+
+### DISPLAYING THE POD IP AND THE POD’S NODE WHEN LISTING PODS
+```
+$ kubectl get pods -o wide
+NAME            READY   STATUS             RESTARTS   AGE   IP            NODE       NOMINATED NODE
+kubia-4ht92     1/1     Running            0          27m   172.17.0.10   minikube   <none>
+kubia-5pdjz     1/1     Running            1          14h   172.17.0.4    minikube   <none>
+kubia-qkmsh     1/1     Running            0          25m   172.17.0.11   minikube   <none>
+kubia-s7g97     1/1     Running            0          27m   172.17.0.9    minikube   <none>
+```
+## Introducing The Kubernetes Dashboard:
+```
+$ minikube dashboard
+```
+![](pictures/dashboard.png)
