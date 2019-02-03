@@ -294,4 +294,4 @@ $ kubectl port-forward kubia-8q4q9 70:8080
 curl localhost:70
 You've hit kubia-8q4q9
 ```
-![](pictures/port_forward.png)
+![](pictures/port.png)
