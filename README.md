@@ -196,3 +196,63 @@ shown in the following listing.
 $ kubectl get po kubia-zxzij -o yaml
 ```
 ![](pictures/chap3.png)
+
+## Creating a Simple YAML Descriptor For a Pod:
+A basic pod manifest: kubia-manual.yaml.
+```
+apiVersion: v1
+kind: Pod
+metadata:
+name: kubia-manual
+spec:
+containers:
+- image: luksa/kubia
+name: kubia
+ports:
+- containerPort: 8080
+protocol: TCP
+```
+create a file and fill with this material
+```
+$ kubectl create -f kubia-manual.yaml
+pod "kubia-manual" created
+```
+### Helpful Command:
+For example, when creating a pod manifest from scratch, you can start by asking
+kubectl to explain pods:
+```
+$ kubectl explain pods
+DESCRIPTION:
+Pod is a collection of containers that can run on a host. This resource
+is created by clients and scheduled onto hosts.
+FIELDS:
+kind
+<string>
+Kind is a string value representing the REST resource this object
+represents...
+metadata <Object>
+Standard object's metadata...
+spec
+<Object>
+Specification of the desired behavior of the pod...
+status
+<Object>
+Most recently observed status of the pod. This data may not be up to
+date...
+```
+Kubectl prints out the explanation of the object and lists the attributes the object
+can contain. You can then drill deeper to find out more about each attribute. For
+example, you can examine the spec attribute like this:
+```
+$ kubectl explain pod.spec
+RESOURCE: spec <Object>
+DESCRIPTION:
+Specification of the desired behavior of the pod...
+podSpec is a description of a pod.
+FIELDS:
+hostPID
+<boolean>
+Use the host's pid namespace. Optional: Default to false.
+...
+volumes
+```
