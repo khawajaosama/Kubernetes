@@ -256,3 +256,15 @@ Use the host's pid namespace. Optional: Default to false.
 ...
 volumes
 ```
+### RETRIEVING THE WHOLE DEFINITION OF A RUNNING POD:
+After creating the pod, you can ask Kubernetes for the full YAML of the pod or JSON.
+```
+$ kubectl get po kubia-manual -o yaml
+            OR
+$ kubectl get po kubia-manual -o json
+```
+## EDIT the Replication Controller:
+```
+kubectl edit rc kubia   (opens a VIM Editor) 
+```
+
