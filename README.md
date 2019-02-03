@@ -187,3 +187,12 @@ kubia-s7g97     1/1     Running            0          27m   172.17.0.9    miniku
 $ minikube dashboard
 ```
 ![](pictures/dashboard.png)
+
+## Creating Pods from YAML or JSON Descriptors:
+You’ll use the kubectl get
+command with the -o yaml option to get the whole YAML definition of the pod, as
+shown in the following listing.
+```
+$ kubectl get po kubia-zxzij -o yaml
+```
+![](pictures/chap3.png)
