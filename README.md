@@ -284,10 +284,14 @@ name by including the -c <container name> option when running kubectl logs .
 $ kubectl logs kubia-manual -c kubia
 Kubia server starting...
 ```
-## FORWARDING A LOCAL NETWORK PORT TO A PORT IN THE POD:
+### FORWARDING A LOCAL NETWORK PORT TO A PORT IN THE POD:
 ```
 $ kubectl port-forward kubia-8q4q9 70:8080
 ... Forwarding from 127.0.0.1:70 -> 8080
 ... Forwarding from [::1]:70 -> 8080
+```
+```
+curl localhost:70
+You've hit kubia-8q4q9
 ```
 ![](pictures/port_forward.png)
