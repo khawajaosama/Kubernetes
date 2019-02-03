@@ -268,3 +268,19 @@ $ kubectl get po kubia-manual -o json
 kubectl edit rc kubia   (opens a VIM Editor) 
 ```
 
+## Viewing application logs:
+```
+$ docker logs <container id>
+```
+### RETRIEVING A POD’S LOG WITH KUBECTL LOGS:
+```
+$ kubectl logs kubia-manual
+Kubia server starting...
+```
+### SPECIFYING THE CONTAINER NAME WHEN GETTING LOGS OF A MULTI - CONTAINER POD:
+If your pod includes multiple containers, you have to explicitly specify the container
+name by including the -c <container name> option when running kubectl logs .
+```
+$ kubectl logs kubia-manual -c kubia
+Kubia server starting...
+```
