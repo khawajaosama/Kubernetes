@@ -303,6 +303,10 @@ more evident.For example, with microservices architectures, the number of deploy
 vices can easily exceed 20 or more.multiple versions or
 releases (stable, beta, canary, and so on) will run concurrently. This can lead to hun-
 dreds of pods in the system. Without a mechanism for organizing them, you end up
-with a big, incomprehensible mess, such as the one shown in figure
+with a big, incomprehensible mess, such as the one shown in figure. It’s evident you need a way of organizing them into smaller groups based on arbitrary
+criteria, so every developer and system administrator dealing with your system can eas-
+ily see which pod is which.
 
 ![](pictures/multiple_pods.png)
+
+## Introducing labels:
