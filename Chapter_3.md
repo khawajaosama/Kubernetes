@@ -146,3 +146,32 @@ $ kubectl edit pod kubia-whlck
 ```
 Replication Identify the pod with label, so when the label of kubia-whlck changes it forget it and then start another pod.
 ![](pictures/rc_fun.png)
+
+if you’re only interested in certain labels, you can specify
+them with the -L switch and have each displayed in its own column.
+```
+$ kubectl get pod -L creation_method,env
+```
+## Modifying labels of existing pods:
+Labels can also be added to and modified on existing pods. Because the kubia-man-
+ual pod was also created manually, let’s add the creation_method=manual label to it:
+```
+$ kubectl label pod <pod_name> manual1=code1
+  pod "kubia-manual" labeled
+```
+You need to use the --overwrite option when changing existing labels.
+```
+$ kubectl label pod kubia-manual-v2 env=debug --overwrite
+  pod "kubia-manual-v2" labeled
+```
+## Listing subsets of pods through label selectors:
+Label selectors allow you to select a subset of pods tagged with certain labels and perform an
+operation on those pods.
+- Contains (or doesn’t contain) a label with a certain key
+- Contains a label with a certain key and value
+- Contains a label with a certain key, but with a value not equal to the one you
+  specify
+```
+$ kubectl get pod -l run=kubia
+```
+![](pictures/label_selector.png)
