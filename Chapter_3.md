@@ -167,7 +167,7 @@ $ kubectl label pod kubia-manual-v2 env=debug --overwrite
 ## Listing subsets of pods through label selectors:
 Label selectors allow you to select a subset of pods tagged with certain labels and perform an
 operation on those pods.
-- Contains (or doesn’t contain) a label with a certain key
+- Contains (or doesn’t contain) a label with a certain key.
 - Contains a label with a certain key and value
 - Contains a label with a certain key, but with a value not equal to the one you
   specify
