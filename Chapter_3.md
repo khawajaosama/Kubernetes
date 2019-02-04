@@ -130,3 +130,19 @@ those pods,Each pod is labeled with two labels:
 - rel , which shows whether the application running in the pod is a stable, beta,
   or a canary release.
   ![](pictures/labeled_pods.png)
+
+## Specifying labels when creating a pod:
+Create a new file called kubia-manual-with-labels.yaml.
+```
+$ kubectl create -f kubia-manual-with-labels.yaml
+pod "kubia-manual-v2" created
+```
+![](pictures/edit.png)
+
+### Lets do some fun with Replication Controller:
+Change the label of kubia-whlck by:
+```
+$ kubectl edit pod kubia-whlck
+```
+Replication Identify the pod with label, so when the label of kubia-whlck changes it forget it and then start another pod.
+![](pictures/rc_fun.png)
