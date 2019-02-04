@@ -188,4 +188,4 @@ $ minikube dashboard
 ```
 ![](pictures/dashboard.png)
 
-Move to [Chapter No 3](https://github.com/khawajaosama/Kubernetes/blob/master/Chap_3.md) from file Section.
+Move to [Chapter No 3](https://github.com/khawajaosama/Kubernetes/blob/master/Chapter_3.md) from file Section.
