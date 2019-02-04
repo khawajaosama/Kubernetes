@@ -295,3 +295,14 @@ curl localhost:70
 You've hit kubia-8q4q9
 ```
 ![](pictures/port.png)
+
+## Organizing pods with labels:
+As the number of
+pods increases, the need for categorizing them into subsets becomes more and
+more evident.For example, with microservices architectures, the number of deployed microser-
+vices can easily exceed 20 or more.multiple versions or
+releases (stable, beta, canary, and so on) will run concurrently. This can lead to hun-
+dreds of pods in the system. Without a mechanism for organizing them, you end up
+with a big, incomprehensible mess, such as the one shown in figure
+
+![](pictures/multiple_pods.png)
