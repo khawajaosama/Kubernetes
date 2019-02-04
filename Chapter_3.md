@@ -174,3 +174,4 @@ operation on those pods.
 ```
 $ kubectl get pod -l run=kubia
 ```
+![](pictures/label_selectors.png)
