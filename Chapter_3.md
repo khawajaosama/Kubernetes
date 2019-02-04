@@ -175,3 +175,16 @@ operation on those pods.
 $ kubectl get pod -l run=kubia
 ```
 ![](pictures/label_selectors.png)
+
+Similarly, you could also match pods with the following label selectors:
+- creation_method!=manual to select pods with the creation_method label with
+any value other than manual
+- env in (prod,devel) to select pods with the env label set to either prod or
+devel
+- env notin (prod,devel) to select pods with the env label set to any value other
+than prod or devel
+
+### Using multiple conditions in a label selector:
+you’d use the following
+selector: app=pc,rel=beta
+![](pictures/multi_label.png)
