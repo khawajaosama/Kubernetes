@@ -170,7 +170,7 @@ operation on those pods.
 - Contains (or doesn’t contain) a label with a certain key.
 - Contains a label with a certain key and value
 - Contains a label with a certain key, but with a value not equal to the one you
-  specify
+  specify.
 ```
 $ kubectl get pod -l run=kubia
 ```
