@@ -188,3 +188,69 @@ than prod or devel
 you’d use the following
 selector: app=pc,rel=beta
 ![](pictures/multi_label.png)
+
+## Using Namespaces to Group Resources:
+Using multiple namespaces allows you to split complex systems with numerous com-
+ponents into smaller distinct groups. They can also be used for separating resources
+in a multi-tenant environment, splitting up resources into production, development,
+and QA environments, or in any other way you may need. Resource names only need
+to be unique within a namespace. Two different namespaces can contain resources of
+the same name. But, while most types of resources are namespaced, a few aren’t. One
+of them is the Node resource, which is global and not tied to a single namespace.
+![](pictures/namespace1.jpg)
+
+It will display the all podes present under "kube-system" namespace.
+
+```
+$ kubectl get po --namespace kube-system
+```
+Or, you can create it from file like:
+```
+$ kubectl create -f custom-namespace.yaml
+  namespace "custom-namespace" created
+```
+###Note:
+Only Resources can be created from files. labels can not created with files.
+
+## Managing Objects in Other Namespaces:
+```
+$ kubectl create -f kubia-manual.yaml -n custom-namespace
+  pod "kubia-manual" created
+```
+## Deleting a pod by name:
+First, delete the kubia-gpu pod by name:
+```
+$ kubectl delete po kubia-gpu
+  pod "kubia-gpu" deleted
+```
+## Deleting pods using label selectors:
+```
+$ kubectl delete po -l creation_method=manual
+  pod "kubia-manual" deleted
+  pod "kubia-manual-v2" deleted
+```
+## Deleting a namespce:
+delete the whole namespace (the pods will be deleted along with the namespace auto-
+matically), using the following command:
+```
+$ kubectl delete ns custom-namespace
+  namespace " custom-namespace " deleted
+```
+## Deleting (almost) all resources in a namespace:
+```
+$ kubectl delete all --all
+  pod "kubia-09as0" deleted
+  replicationcontroller "kubia" deleted
+  service "kubernetes" deleted
+  service "kubia-http" deleted
+```
+# Summary:
+- Pods can run multiple processes and are similar to physical hosts in the non-container world.
+- YAML or JSON descriptors can be written and used to create pods and then examined to see the      specification of a pod and its current state.
+- Labels and label selectors should be used to organize pods and easily perform operations on       multiple pods at once.
+- You can use node labels and selectors to schedule pods only to nodes that have
+  certain features.
+- Annotations allow attaching larger blobs of data to pods either by people or
+  tools and libraries.
+- Namespaces can be used to allow different teams to use the same cluster as though they were       using separate Kubernetes clusters.
+- How to use the kubectl explain command to quickly look up the information on any Kubernetes       resource.
